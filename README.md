@@ -6,6 +6,31 @@
 
 参考视频：[old example.MP4](<./old example.MP4>)、[iOS 27 beta3.mov](<./iOS 27 beta3.mov>)。视频用于理解页面效果、交互方式和功能流程，不要求逐像素复刻，也不代表推荐的代码架构或第三方技术选型；实现与验收仍以本 README 的文字要求为准。
 
+> ⚠️ **视频下载方式**：这两个视频通过 Git LFS 管理，仓库页面右上角 **Code → Download ZIP** 下载到的是几十字节的指针文件，不是视频本身，播放器会打不开。请用以下任一方式获取可正常播放的视频：
+>
+> 1. 安装 [Git LFS](https://git-lfs.com/) 后执行 `git lfs install`，再 `git clone` 本仓库（或已 clone 的执行 `git lfs pull`），视频会自动还原为完整文件。
+> 2. 在仓库页面直接点开视频文件条目，进入文件详情页用 **Download** 按钮单独下载（这种方式会走 LFS，拿到的是真实视频）。
+>
+> 如果下载后文件只有几百字节或无法播放，说明是用了网页 ZIP 下载，请改用上述方式重新获取。
+
+<details>
+<summary>让 AI Agent 帮你正确获取视频（复制下方提示词即可）</summary>
+
+如果你用的是能够执行 shell 命令的 AI Agent（如 Claude Code），把下面提示词整段复制给它，它会自动用正确方式 clone 仓库，视频即可正常播放：
+
+```text
+请 clone 仓库 git@github.com:XiyouMobile3G-iOS/Weather-Forecast-Requests.git（没有 SSH 权限则用 https://github.com/XiyouMobile3G-iOS/Weather-Forecast-Requests.git）。
+
+注意：仓库里 old example.MP4 和 iOS 27 beta3.mov 两个视频通过 Git LFS 管理，必须按以下步骤操作，不能直接下载网页 ZIP（网页 ZIP 拿到的只是几百字节的 LFS 指针文件，不是真实视频）：
+
+1. 确认已安装 git-lfs（`git lfs version`），未安装则先安装（如 `brew install git-lfs`），再执行一次 `git lfs install`。
+2. 正常执行 `git clone` 克隆仓库；如果仓库已经存在于本地，改为在仓库目录内执行 `git lfs pull` 补全视频内容。
+3. 执行 `file "old example.MP4" "iOS 27 beta3.mov"` 核实两个文件已是 `ISO Media`/`QuickTime` 格式的真实视频，而不是纯文本指针（可配合 `ls -la` 检查文件大小是否为几十 MB 级别）。
+4. 确认视频可正常播放后，再继续阅读 README 完成后续工作；如果按上述步骤操作后视频仍异常，明确报告具体失败步骤，不要笼统说"无法查看"。
+```
+
+</details>
+
 ## 开始前：先学会原生网络请求
 
 建议按顺序阅读：
